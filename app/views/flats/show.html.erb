@@ -1,0 +1,62 @@
+<% content_for(:title) do %>
+  <%= @flat.title %> is on AIRBNB-CLONE
+<% end %>
+<% content_for(:description) do %>
+  <%= @flat.description %> is one the best flat
+<% end %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @flat.title %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @flat.address %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @flat.description %>
+</p>
+
+<p>
+  <strong>Stars:</strong>
+  <%= @flat.stars %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @flat.user_id %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @flat.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @flat.longitude %>
+</p>
+
+<ul>
+  <% @flat.reviews.each do |review| %>
+  <li><%= review.content %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Edit', edit_flat_path(@flat) %> |
+<%= link_to 'Back', flats_path %> |
+<%= link_to 'info about owner', owner_flat_path(@flat) %>|
+<%= link_to 'Add review', new_flat_review_path(@flat) %>
+
+<% content_for(:js) do %>
+  <%= javascript_tag do %>
+    $(function(){
+      $(".target").text("<%= some_ruby %>");
+    });
+  <% end %>
+<% end %>

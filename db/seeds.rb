@@ -5,3 +5,28 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Flat.destroy_all
+flats_attributes = [
+  {
+    title:         "à coté de Epicure au Bristol",
+    address:      "112 rue du Fg St-Honoré 75008 Paris",
+    description:  "Face au jardin, on découvre une salle lumineuse... et la cuisine d'Éric Frechon.",
+    stars:        3,
+    owner:        "Nico"
+  },
+  {
+    title:         "a  La truffière",
+    address:      "4 rue Blainville 75005 Paris",
+    description:  "Une valeur sûre que cette belle maison du 17e et les recettes de Jean-Christophe Rizet",
+    stars:        1,
+    owner:        "stan"
+  },
+  {
+    title:         " A Le pré catelan",
+    address:      "route de Suresnes 75016 Paris",
+    description:  "Oeil vif, geste sûr: impossible de distinguer, dans les créations de Frédéric Anton...",
+    stars:        3,
+    owner:        "marie"
+  }
+]
+flats_attributes.each { |params| Flat.create!(params) }

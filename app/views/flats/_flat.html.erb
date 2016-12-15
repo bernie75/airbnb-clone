@@ -1,0 +1,15 @@
+<div class="card" style="background-image: url(<%= image_path 'card-paris.jpg'%>);">
+  <div class="card-header">
+
+  </div>
+  <div class="card-body">
+    <h2><%= flat.title %></h2>
+    <p class="address"><%= flat.address %></p>
+    <p><%= flat.description %></p>
+    <%= link_to 'Show', flat %>
+    <%= link_to 'Edit', edit_flat_path(flat) %>
+    <%= link_to 'Destroy', flat, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>
+
+
