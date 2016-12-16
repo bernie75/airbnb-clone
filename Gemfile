@@ -17,7 +17,8 @@ gem 'faker'
 gem 'pundit'
 gem 'cloudinary', '1.1.0'
 gem 'rest-client'
-gem "gmaps4rails"
+gem 'coffee-rails'
+gem 'gmaps4rails'
 gem 'stripe'
 gem 'money-rails'
 gem 'coffee-script'
@@ -36,7 +37,6 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem "attachinary", github: "assembler/attachinary"
 gem "jquery-fileupload-rails"
-gem "coffee-rails"
 
 group :development, :test do
   gem 'binding_of_caller'

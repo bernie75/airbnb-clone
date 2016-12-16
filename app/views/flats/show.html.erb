@@ -32,7 +32,7 @@
   <%= @flat.user_id %>
 </p>
 
-<p>
+<!-- <p>
   <strong>Latitude:</strong>
   <%= @flat.latitude %>
 </p>
@@ -40,7 +40,7 @@
 <p>
   <strong>Longitude:</strong>
   <%= @flat.longitude %>
-</p>
+</p> -->
 
 <ul>
   <% @flat.reviews.each do |review| %>
@@ -53,10 +53,11 @@
 <%= link_to 'info about owner', owner_flat_path(@flat) %>|
 <%= link_to 'Add review', new_flat_review_path(@flat) %>
 
-<% content_for(:js) do %>
+<% content_for(:after_js) do %>
   <%= javascript_tag do %>
-    $(function(){
-      $(".target").text("<%= some_ruby %>");
+    $(document).ready(function() {
+      var coord = <%= raw @flat_coordinates.to_json %>;
+      alert('Flat coordinates are ' + coord.lat + ', ' + coord.lng);
     });
   <% end %>
 <% end %>
